@@ -37,7 +37,7 @@ while True:
     message =response.choices[0].message
 
     # ✅ Handle tool call
-    if message.tool_calls:
+    while message.tool_calls:
         tool_call = message.tool_calls[0]
         tool_name = tool_call.function.name
         tool_args = json.loads(tool_call.function.arguments)
@@ -66,7 +66,6 @@ while True:
     print(f"\n🤖 AI: {reply}\n")
 
 
-print(history)
 
 
 

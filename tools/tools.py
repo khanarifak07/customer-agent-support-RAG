@@ -45,9 +45,9 @@ tools = [
                         "type": "string",
                         "description": "Search query"
                     }
-                }
-            },
-            "required": ["query"]
+                },
+                "required": ["query"]
+            }
         }
     },
     {
@@ -62,9 +62,9 @@ tools = [
                         "type": "string",
                         "description": "Math expression like 10 * 10"
                     }
-                }
-            },
-            "required": ["expression"]
+                },
+                "required": ["expression"]
+            }
         }
     },
     {
@@ -89,16 +89,11 @@ tools = [
         "function": {
             "name": "get_current_time",
             "description": "To get the current tine",
-            # "parameters": {
-            #     "type": "object",
-            #     "properties": {
-            #         "expression": {
-            #             "type": "string",
-            #             "description": "Math expression like 10 * 10"
-            #         }
-            #     }
-            # },
-            # "required": [""]
+            "parameters": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            }
         }
     },
 ]

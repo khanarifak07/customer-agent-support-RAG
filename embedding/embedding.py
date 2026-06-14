@@ -44,5 +44,3 @@ print("✅ Documents loaded into vector DB\n")
 
 
 
-
-
