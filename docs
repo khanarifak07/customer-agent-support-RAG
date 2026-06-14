@@ -1,0 +1,40 @@
+PYTHON VIRTUAL ENVIRONMENT
+A Python virtual environment (venv) is an isolated Python workspace that keeps a project's dependencies
+separate from other projects and from your system Python.
+
+Think of it like this:
+Your Computer
+│
+├── Project A
+│   ├── Django 4.2
+│   └── requests 2.31
+│
+├── Project B
+│   ├── Flask 3.0
+│   └── requests 2.28
+│
+└── System Python
+
+Without virtual environments, all packages get installed globally and projects can conflict with each other.
+
+
+Production practice (pip freeze requirements.txt)
+Use:
+pip freeze > requirements.txt
+Then later:
+pip install -r requirements.txt
+This is the standard workflow used in most Python projects.
+
+What about pip list > requirements.txt?
+You can do:
+pip list > requirements.txt (It creates a human readable file (Package_name   Package_version))
+but the file will look like:
+Package                Version
+---------------------  -------
+chromadb               1.0.15
+sentence-transformers  5.0.0
+This is not a valid requirements file.
+If you try:
+pip install -r requirements.txt
+it will fail because pip expects:
+package==version
