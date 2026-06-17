@@ -1,11 +1,13 @@
 import requests
 from datetime import datetime
-from embedding.embedding import embedding_model
+# from embedding.embedding import embedding_model
+from embedding.embedding import get_embedding
 from client.chroma_client import collection
 
 # TOOL 1
 def search_document(query: str) -> str:
-    question_embedding = embedding_model.encode(query).tolist()
+    # question_embedding = embedding_model.encode(query).tolist()
+    question_embedding = get_embedding(query)
     results = collection.query(
         query_embeddings=[question_embedding],
         n_results=3
